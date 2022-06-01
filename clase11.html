@@ -24,12 +24,78 @@
             margin: 0;
             font-family: 'Quicksand', sans-serif;
         }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            /* width: 100%; */
+            padding: 0 24px;
+            border-bottom: 1px solid var(--very-light-pink);
+        }
+        .menu{
+            display: none;  /* desaparecer el menu en desktop */
+        }
+        .logo{
+            width: 100px;
+        }
+        .navbar-left{
+            display: flex;
+        }
         .navbar-left ul{
+            margin-left: 12px;
+        }
+        
+        .navbar-left ul, .navbar-rigth ul{
             list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            height: 60px;
         }
         .navbar-left ul a{
             color: var(--very-light-pink);
             text-decoration: none;
+            border: 1px solid var(--white);
+            padding: 8px;
+            border-radius: 8px;
+            
+        }
+        .navbar-left ul a:hover, .navbar-rigth ul a:hover{
+            color: var(--hospital-green);
+            border: 1px solid var(--hospital-green);
+        }
+        .navbar-email{
+            font-size: var(--sm);
+            color: var(--very-light-pink);
+            margin-right: 12px;
+        }
+        .navbar-shopping-cart{
+            position: relative;
+        }
+        .navbar-shopping-cart div{
+            background-color: var(--hospital-green);
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            font-size: var(--sm);
+            font-weight: bold;
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 640px) {
+          .menu {
+            display: block;
+          }
+          .navbar-left ul {
+            display: none; /* desaparece el menu de ul */
+          }
+          .navbar-email {
+            display: none; /* desaparece el emial */
+          }
         }
     </style>
 </head>
@@ -48,11 +114,14 @@
             </ul>
         </div>
         <div class="navbar-rigth">
-            <li>example@example.com</li>
-            <li class="navbar-shopping-cart">
-                <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
-                <div>2</div>
-            </li>
+            <ul>
+                <li class="navbar-email">example@example.com</li>
+                <li class="navbar-shopping-cart">
+                    <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
+                    <div>2</div>
+                </li>
+
+            </ul>
         </div>
     </nav>
 </body>
